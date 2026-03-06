@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DevStudio Portfolio</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #2c2c54, #6c63ff);
+    color: white;
+  }
+  .container {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: white;
+    color: #222;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+  header {
+    background: linear-gradient(135deg, #2c2c54, #6c63ff);
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+    border-radius: 12px;
+  }
+  header .logo {
+    font-weight: bold;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+  }
+  header .logo::before {
+    content: "◆";
+    margin-right: 8px;
+    color: #6c63ff;
+  }
+  header button {
+    background-color: #6c63ff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  header button:hover {
+    background-color: #574b90;
+  }
+  .available {
+    background: #4c47c2;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 6px 12px;
+    color: #b6b3ff;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    border: 2px solid #6c63ff;
+  }
+  h1 {
+    margin: 8px 0;
+    font-size: 1.6em;
+  }
+  h1 strong, h1 span {
+    color: #6c63ff;
+  }
+  p.desc {
+    color: #222;
+    line-height: 1.3em;
+    margin-bottom: 16px;
+  }
+  button.portfolio-btn, button.contact-btn {
+    background-color: #6c63ff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 6px 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  button.contact-btn {
+    background-color: transparent;
+    border: 2px solid #6c63ff;
+    color: #6c63ff;
+  }
+  button.portfolio-btn:hover {
+    background-color: #574b90;
+  }
+  button.contact-btn:hover {
+    background-color: #6c63ff;
+    color: white;
+  }
+  .skills, .portfolio {
+    margin-top: 30px;
+  }
+  .skills h2, .portfolio h2 {
+    color: #222;
+    margin-bottom: 6px;
+    font-size: 1.4em;
+  }
+  .skills p, .portfolio p {
+    color: #555;
+    margin-bottom: 15px;
+  }
+  .skill-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    background: white;
+    color: #222;
+  }
+  .skill-card img {
+    width: 40px;
+    margin-right: 12px;
+  }
+  .skill-content strong {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .portfolio-card {
+    border-radius: 12px;
+    padding: 15px;
+    background: white;
+    color: #222;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+  .portfolio-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .portfolio-card h3 {
+    margin: 0 0 8px 0;
+  }
+  .tags {
+    margin: 10px 0;
+  }
+  .tag {
+    background-color: #ddd;
+    border-radius: 12px;
+    padding: 6px 12px;
+    margin-right: 6px;
+    color: #6c63ff;
+    font-weight: bold;
+    font-size: 0.9em;
+    display: inline-block;
+  }
+  .view-project {
+    border: 2px solid #6c63ff;
+    color: #6c63ff;
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  .view-project:hover {
+    background-color: #6c63ff;
+    color: white;
+  }
+  .contact-info {
+    margin-top: 20px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    color: #222;
+  }
+  .contact-info h2 {
+    margin-top: 0;
+    color: #222;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .contact-item img {
+    width: 24px;
+    margin-right: 12px;
+  }
+  .contact-item strong {
+    margin-right: 6px;
+  }
+  .social-links a {
+    color: #6c63ff;
+    margin-right: 20px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">DevStudio</div>
+  <button>Hire Me</button>
+</header>
+
+<div class="container">
+  <div class="available">Available for Work</div>
+  <h1>Hi, saya <span><strong>Dani Kamdika</strong></span><br />Web Developer</h1>
+  <p class="desc">
+    Mahasiswa Sistem Informasi dengan pengalaman proyek di bidang pengembangan website,
+    database, dan sistem informasi. Berkomitmen menghadirkan solusi teknologi yang modern dan efektif.
+  </p>
+  <button class="portfolio-btn">Lihat Portfolio</button>
+  <button class="contact-btn">Hubungi Saya</button>
+</div>
+
+<div class="container skills">
+  <h2>Keahlian Saya</h2>
+  <p>Teknologi yang saya kuasai</p>
+  
+  <div class="skill-card">
+    <img src="https://img.icons8.com/ios-filled/50/000000/document--v1.png" alt="HTML Icon"/>
+    <div class="skill-content">
+      <strong>HTML5</strong>
+      Semantic markup, aksesibilitas, dan struktur dokumen yang baik.
+    </div>
+  </div>
+  
+  <div class="skill-card">
+    <img src="https://img.icons8.com/ios-filled/50/000000/color-palette.png" alt="CSS Icon"/>
+    <div class="skill-content">
+      <strong>CSS3</strong>
+      Flexbox, Grid, animasi, dan responsive design untuk semua layar.
+    </div>
+  </div>
+</div>
+
+<div class="container portfolio">
+  <h2>My Portfolio</h2>
+  <p>project yang pernah saya kerjakan</p>
+
+  <div class="portfolio-card">
+    <img src="c:\Users\user\Pictures\Screenshots\Cuplikan layar 2026-03-04 191155.png" alt="Calculator Project Preview"/>
+    <h3>Website Calculator Application</h3>
+    <p>Website Calculator Application responsif menggunakan HTML, CSS, dan JavaScript.</p>
+    <div class="tags">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+    </div>
+    <a href="#" class="view-project">View Project</a>
+  </div>
+</div>
+
+<div class="container contact-info">
+  <h2>Get In Touch</h2>
+  <p>Tertarik bekerja sama? Kirim pesan dan saya akan segera membalas.</p>
+  
+  <h3>Contact Information</h3>
+  
+  <div class="contact-item">
+      <img src="https://img.icons8.com/color/48/000000/place-marker.png" alt="Location Icon"/>
+      <strong>Location</strong>&nbsp;Medan, Sumatra Utara
+  </div>
+  <div class="contact-item">
+      <img src="https://img.icons8.com/ios/50/000000/new-post.png" alt="Email Icon"/>
+      <strong>Email</strong>&nbsp;dankamsih326@gmail.com
+  </div>
+  <div class="contact-item">
+      <img src="https://img.icons8.com/ios/50/000000/iphone.png" alt="Phone Icon"/>
+      <strong>Phone</strong>&nbsp;0823-8165-9176
+  </div>
+  
+  <div class="social-links">
+    <a href="#" target="_blank">LinkedIn</a>
+    <a href="#" target="_blank">GitHub</a>
+    <a href="#" target="_blank">Instagram</a>
+  </div>
+</div>
+
+</body>
+</html>
